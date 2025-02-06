@@ -4,6 +4,8 @@ const passport = require('passport');
 const users = require('./routes/API/users');
 const profile = require('./routes/API/profile');
 const posts = require('./routes/API/posts');
+const questions = require('./routes/API/questions');
+const answers = require('./routes/API/answers');
 const app = express();
 const connectToMongoDB = require('./config/keys');
 
@@ -26,6 +28,8 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+app.use('/api/questions', questions);
+app.use('/api/answers', answers);
 
 app.listen( process.env.PORT, () => {console.log(`listening on port ${process.env.PORT}`)});
 
